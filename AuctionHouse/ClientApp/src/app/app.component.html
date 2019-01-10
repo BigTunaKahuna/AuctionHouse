@@ -1,2 +1,31 @@
+<div header="Login">
+  <span>alice/password</span>
+  <br />
+  <span>bob/password</span>
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <div>
+      <input pInputText type="text" placeholder="username" formControlName="username" />
+    </div>
+    <div>
+      <input pInputText type="password" placeholder="password" formControlName="password" />
+    </div>
+    <div>
+      <button type="submit" label="Log in">Submit</button>
+    </div>
+  </form>
+</div>
 
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+  <h3>Message:</h3>
+  <input type="text" formControlName="message" />
+  <button type="submit" label="Send" >Submit</button>
+</form>
+
+<div>
+  <ul>
+    <li *ngFor="let msg of messages">
+      <b>{{ msg.user }}:</b> {{ msg.content }}
+    </li>
+  </ul>
+</div>
 <router-outlet></router-outlet>
